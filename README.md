@@ -9,3 +9,5 @@ Our event calendar application is designed to provide you with an intuitive and 
 ### Status
 
 The website is currently under construction, with the primary focus being to achieve an MVP as soon as possible. Efforts are being made to ensure both the quality of the final product and its security in operation. The goal is to meet the established expectations and requirements, providing users with a solid and reliable experience.
+
+Puedes ver los avances en [docs](https://github.com/roblesdotdev/calendext/tree/main/docs).
