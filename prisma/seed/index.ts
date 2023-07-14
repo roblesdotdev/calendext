@@ -10,13 +10,15 @@ async function seed() {
   console.timeEnd(`🧹 Clean database`)
 
   console.time(`🌱 Database has been seeded`)
-  await Promise.all([
-    db.event.create({
-      data: {
-        name: 'My test event',
-      },
+  await Promise.all(
+    Array.from({ length: 20 }, async () => {
+      await db.event.create({
+        data: {
+          name: 'My test event',
+        },
+      })
     }),
-  ])
+  )
   console.timeEnd(`🌱 Database has been seeded`)
 }
 
