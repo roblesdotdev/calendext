@@ -1,13 +1,16 @@
-import UserMenu from '~/components/user-menu'
-import { getUserSession } from '~/lib/session'
+import Link from 'next/link'
 
 export default async function MePage() {
-  const user = await getUserSession()
   return (
     <div className="flex flex-col items-center justify-center">
-      {user && <UserMenu user={user} />}
-      <div className="py-12">
-        <h1>User Panel</h1>
+      <div className="flex flex-col gap-4 px-4 py-12">
+        <h1 className="text-2xl font-bold">Your Events</h1>
+        <p>
+          You don&apos;t have any events created yet! Start by{' '}
+          <Link className="underline" href="/me/e/create">
+            creating one now!
+          </Link>
+        </p>
       </div>
     </div>
   )
