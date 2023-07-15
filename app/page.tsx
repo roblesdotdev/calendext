@@ -1,15 +1,16 @@
-import { db } from './lib/db'
-
-async function getEvents() {
-  return db.event.findMany()
-}
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { getUserSession } from '~/lib/session'
 
 export default async function Home() {
-  const events = await getEvents()
+  const user = await getUserSession()
+
+  if (user) return redirect('/me')
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <h1 className="text-2xl font-bold">Calendext</h1>
-      <pre>{JSON.stringify(events, null, 2)}</pre>
+      <Link href="/me">Get started</Link>
     </div>
   )
 }
