@@ -70,20 +70,22 @@ aplicación, aquí hay algunas ideas:
   - [ ] Crear componentes básicos como botones y tarjetas: Diseñar y desarrollar
         componentes reutilizables que sigan las directrices de diseño
         establecidas.
-- [ ] Definir y configurar un método para la persistencia de datos:
-  - [ ] Configurar Prisma como ORM: Establecer la conexión con la base de datos
+- [x] Definir y configurar un método para la persistencia de datos:
+  - [x] Configurar Prisma como ORM: Establecer la conexión con la base de datos
         y configurar el ORM (Object-Relational Mapping) para interactuar con
         ella.
-  - [ ] Definir el esquema/modelo de datos: Diseñar la estructura de la base de
+  - [x] Definir el esquema/modelo de datos: Diseñar la estructura de la base de
         datos y definir los modelos necesarios para el proyecto.
-  - [ ] Ingresar datos "dummy" para pruebas: Crear registros de prueba en la
+  - [x] Ingresar datos "dummy" para pruebas: Crear registros de prueba en la
         base de datos para verificar el funcionamiento de la persistencia de
         datos.
-- [ ] Agregar un sistema de autenticación:
+- [x] Agregar un sistema de autenticación:
+  - [x] Autenticación con GitHub: Proporcionar la opción de autenticación
+        utilizando las cuentas de GitHub.
   - [ ] Autenticación con Google: Permitir a los usuarios autenticarse
         utilizando sus cuentas de Google.
-  - [ ] Autenticación con GitHub: Proporcionar la opción de autenticación
-        utilizando las cuentas de GitHub.
+  - [ ] Utilizar Next.js Middleware para proteger las rutas.
+  
 - [ ] Implementar operaciones CRUD básicas para los eventos de cada usuario:
   - [ ] Permitir a los usuarios crear eventos: Proporcionar un formulario o
         interfaz para que los usuarios creen nuevos eventos.
