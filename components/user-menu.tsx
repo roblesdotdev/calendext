@@ -9,7 +9,7 @@ type UserMenuProps = {
 
 export default function UserMenu({ user }: UserMenuProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="inline-flex flex-col gap-2">
       <span>{user.name}</span>
       <button onClick={() => signOut()}>Sign Out</button>
     </div>
