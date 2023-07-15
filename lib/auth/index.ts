@@ -3,7 +3,6 @@ import type { NextAuthOptions } from 'next-auth'
 import { providers } from './providers'
 
 import { db } from '~/lib/db'
-import { env } from 'process'
 
 export const authOptions: NextAuthOptions = {
   // @see https://github.com/prisma/prisma/issues/16117
@@ -14,7 +13,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/sign-in/',
   },
-  secret: env.AUTH_SECRET,
   providers,
   callbacks: {
     async session({ token, session }) {
@@ -47,9 +45,6 @@ export const authOptions: NextAuthOptions = {
         email: dbUser.email,
         picture: dbUser.image,
       }
-    },
-    redirect() {
-      return '/'
     },
   },
 }
