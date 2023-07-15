@@ -1,4 +1,5 @@
-# Calendar: Frontend developer challenge
+<details>
+<summary><h3>Calendar: Frontend developer challenge</h3></summary>
 
 Hola Frontend Developer! Tu desafío consiste en crear un calendario de eventos
 utilizando ReactJs y NextJs. A continuación, te proporcionaré los detalles del
@@ -48,6 +49,7 @@ aplicación, aquí hay algunas ideas:
 - Agregar la opción de repetición periódica de eventos, como eventos semanales o
   mensuales.
 - Añadir opciones de filtrado para mostrar solo ciertos tipos de eventos.
+</details>
 
 # MVP
 
@@ -84,7 +86,7 @@ aplicación, aquí hay algunas ideas:
         utilizando las cuentas de GitHub.
   - [ ] Autenticación con Google: Permitir a los usuarios autenticarse
         utilizando sus cuentas de Google.
-  - [ ] Utilizar Next.js Middleware para proteger las rutas.
+  - [x] Utilizar Next.js Middleware para proteger las rutas.
   
 - [ ] Implementar operaciones CRUD básicas para los eventos de cada usuario:
   - [ ] Permitir a los usuarios crear eventos: Proporcionar un formulario o
