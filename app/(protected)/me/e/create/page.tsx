@@ -4,7 +4,10 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { type FieldValues, useForm } from 'react-hook-form'
-import { type EventCreateInput } from '~/lib/validation'
+import {
+  type EventCreateInput,
+  type EventCreateResponse,
+} from '~/lib/validation'
 
 export default function CreatePage() {
   const router = useRouter()
@@ -16,11 +19,14 @@ export default function CreatePage() {
   const { mutate, isLoading } = useMutation({
     mutationFn: async (fields: FieldValues) => {
       const { data } = await axios.post('/api/events', fields)
-      console.log(data)
+      return data
     },
     onError: err => {
       // TODO: handle errors
       console.error(err)
+    },
+    onSuccess: ({ id }: EventCreateResponse) => {
+      router.push(`/me/e/${id}`)
     },
   })
 

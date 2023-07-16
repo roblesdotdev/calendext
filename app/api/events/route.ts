@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { db } from '~/lib/db'
 import { getUserSession } from '~/lib/session'
-import { EventCreateInputSchema } from '~/lib/validation'
+import {
+  EventCreateInputSchema,
+  type EventCreateResponse,
+} from '~/lib/validation'
 
 export async function POST(req: NextRequest) {
   try {
@@ -26,7 +29,7 @@ export async function POST(req: NextRequest) {
       },
     })
 
-    return NextResponse.json({ event })
+    return NextResponse.json<EventCreateResponse>({ ...event })
   } catch (error) {
     if (error instanceof z.ZodError) {
       return new Response(error.message, { status: 422 })

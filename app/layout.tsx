@@ -1,4 +1,5 @@
-import './globals.css'
+import './styles/globals.css'
+import './styles/editor.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from './providers'
