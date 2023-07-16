@@ -6,20 +6,20 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Event {
-  id          String         @id @default(cuid())
-  name        String
-  description String?
-  startAt     DateTime?
-  endAt       DateTime?
-  userId      String?        @map("user_id")
-  tags        TagsOnEvents[]
-  createdAt   DateTime       @default(now()) @map("created_at")
-  updatedAt   DateTime       @updatedAt @map("updated_at")
+  id        String         @id @default(cuid())
+  name      String
+  content   Json?
+  startAt   DateTime?
+  endAt     DateTime?
+  userId    String?        @map("user_id")
+  tags      TagsOnEvents[]
+  createdAt DateTime       @default(now()) @map("created_at")
+  updatedAt DateTime       @updatedAt @map("updated_at")
 
   user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -48,12 +48,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String  @map("provider_account_id")
-  refresh_token     String? // @db.Text
-  access_token      String? // @db.Text
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? // @db.Text
+  id_token          String? @db.Text
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
